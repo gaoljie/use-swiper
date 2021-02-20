@@ -1,0 +1,61 @@
+---
+name: Pagination
+route: /pagination
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Pagination
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({ pagination: true });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
+
+# Custom Pagination
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({ pagination: <span>X</span> });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
+
+# Custom Pagination with index
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      pagination: index => <span>{index + 1}</span>
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>

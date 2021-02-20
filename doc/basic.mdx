@@ -1,0 +1,26 @@
+---
+name: Basic
+route: /basic
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Basic
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper();
+    return (
+      <div ref={ref}>
+        <div onClick={() => console.log(1)}>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+    );
+  }}
+</Playground>

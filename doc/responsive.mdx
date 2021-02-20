@@ -1,0 +1,32 @@
+---
+name: Responsive
+route: /responsive
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Responsive
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      slidesPerView: 3,
+      responsive: [
+        [1300, { slidesPerView: 2 }],
+        [900, { slidesPerView: 1 }]
+      ]
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+    );
+  }}
+</Playground>

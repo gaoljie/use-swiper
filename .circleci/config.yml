@@ -1,0 +1,47 @@
+version: 2.1
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:12.0.0
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: module-cache-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - run: yarn lint
+      - save_cache:
+          paths:
+            - node_modules
+          key: module-cache-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: ~/project
+          paths: .
+
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run: npx semantic-release
+      - run: yarn build
+      - run: |
+          yarn add gh-pages -D
+          ./node_modules/.bin/gh-pages -d .docz/dist
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - install
+      - build:
+          requires:
+            - install
+          filters:
+            branches:
+              only:
+                - master

@@ -1,0 +1,17 @@
+.circleci/
+.docz/
+doc/
+node_modules/
+src/
+.eslintrc.js
+.gitignore
+.releaserc.json
+CHANGELOG.md
+.npmignore
+doczrc.js
+gatsby-config.js
+prettier.config.js
+rollup.config.js
+tsconfig.json
+yarn.lock
+.idea/

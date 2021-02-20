@@ -1,0 +1,30 @@
+---
+name: Draggable
+route: /draggable
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Draggable
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      draggable: false,
+      autoPlay: true,
+      loop: true
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+    );
+  }}
+</Playground>

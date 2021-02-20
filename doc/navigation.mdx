@@ -1,0 +1,45 @@
+---
+name: Navigation
+route: /navigation
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Navigation
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({ loop: true, navigation: true });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
+
+# Custom Navigation
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      arrowLeft: <span style={{ fontSize: "50px" }}> {"<"} </span>,
+      arrowRight: <span style={{ fontSize: "50px" }}> {">"} </span>
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>

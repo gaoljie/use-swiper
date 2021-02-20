@@ -1,0 +1,54 @@
+---
+name: Dynamic Render
+route: /dynamic-render
+---
+
+import { useState } from "react";
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Conditional Render
+
+<Playground>
+  {() => {
+    const [show, setShow] = useState(true);
+    const { ref } = useSwiper();
+    return (
+      <>
+        <button onClick={() => setShow(!show)}>Toggle</button>
+        {show && (
+          <div ref={ref}>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+        )}
+      </>
+    );
+  }}
+</Playground>
+
+# Dynamic List
+
+<Playground>
+  {() => {
+    const [list, setList] = useState([1, 2, 3, 4, 5]);
+    const { ref } = useSwiper();
+    return (
+      <>
+        <button onClick={() => setList(prev => [...prev, prev.length + 1])}>
+          Add New Item
+        </button>
+        <div ref={ref}>
+          {list.map(item => (
+            <div key={item}>{item}</div>
+          ))}
+        </div>
+      </>
+    );
+  }}
+</Playground>

@@ -1,0 +1,69 @@
+---
+name: AutoPlay
+route: /auto-play
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# AutoPlay
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({ autoPlay: true, loop: true });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
+
+# AutoPlay with custom speed
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      autoPlay: true,
+      loop: true,
+      duration: 1000
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
+
+# Linear Autoplay
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({
+      autoPlay: true,
+      loop: true,
+      slidesPerView: 3,
+      duration: 1000,
+      speed: 1000
+    });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>

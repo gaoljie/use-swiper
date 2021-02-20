@@ -1,0 +1,82 @@
+{
+  "name": "use-swiper",
+  "version": "1.0.1",
+  "description": "A react based use hook for carousel",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Jay Gao",
+  "license": "MIT",
+  "homepage": "https://gaoljie.github.io/use-swiper/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaoljie/use-swiper"
+  },
+  "keywords": [
+    "swiper",
+    "carousel",
+    "react",
+    "components",
+    "image swiper"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.tsx,.ts",
+    "dev": "docz dev",
+    "build": "docz build",
+    "serve": "docz build && docz serve",
+    "cm": "cz",
+    "prepublishOnly": "rollup --config"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "@wessberg/rollup-plugin-ts": "^1.3.4",
+    "autoprefixer": "^9.8.6",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "3.3.0",
+    "docz": "^2.3.1",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "gatsby-plugin-sass": "^2.3.12",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.26.11",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "semantic-release": "^17.1.1",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.{css,md,mdx,json}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

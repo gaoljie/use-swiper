@@ -1,0 +1,25 @@
+---
+name: Multiple Slide
+route: /multiple-slide
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Multiple Slide
+
+<Playground>
+  {() => {
+    const { ref } = useSwiper({ slidesPerView: 3 });
+    return (
+      <div ref={ref}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    );
+  }}
+</Playground>
