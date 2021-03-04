@@ -7,6 +7,7 @@ export default {
     "Basic",
     "Loop",
     "AutoPlay",
+    "Get Current Index",
     "Draggable",
     "Multiple Slide",
     "Pagination",

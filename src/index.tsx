@@ -212,6 +212,7 @@ export default function useSwiper<T extends HTMLElement>(
     ref: callbackRef,
     prev,
     next,
+    curIndex,
     moveTo
   };
 

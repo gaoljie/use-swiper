@@ -1,0 +1,31 @@
+---
+name: Get Current Index
+route: /get-current-index
+---
+
+import { Playground } from "docz";
+import useSwiper from "../src";
+import "../src/example.scss";
+
+# Get Current Index
+
+<Playground>
+  {() => {
+    const { ref, curIndex } = useSwiper({
+      loop: true
+    });
+    return (
+      <div>
+        <div ref={ref}>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        <div>current index: {curIndex}</div>
+      </div>
+    );
+  }}
+</Playground>
