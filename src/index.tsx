@@ -11,6 +11,7 @@ import useWindowSize from "./hooks/useWindowSize";
 
 export interface SlideProps<T> {
   ref: (instance: T) => void;
+  curIndex: number;
   prev: () => void;
   next: () => void;
   moveTo: (index: number) => void;
